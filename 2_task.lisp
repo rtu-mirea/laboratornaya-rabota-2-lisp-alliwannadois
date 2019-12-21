@@ -6,4 +6,4 @@
     (close in)))
 )
 
-(readfile "C:/Users/drago/Desktop/file.txt")
+(readfile "C:\Users\alliw\Documents\file.txt")
