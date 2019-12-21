@@ -1,0 +1,17 @@
+(defun compress(elements counter newlist)
+    (if (not (eq (cdr elements) nil))
+        (if (= (car elements) (car (cdr elements)))
+            (compress (cdr elements) (+ counter 1) newlist)
+            (if (= counter 1)
+                (compress (cdr elements) 1 (append newlist (list (car elements))))
+                (compress (cdr elements) 1 (append newlist (list (list counter (car elements)))))
+            )
+        )
+        (if (= counter 1)
+            (append newlist elements)
+            newlist
+        )
+    )
+)
+
+(compress (list 1 1 1 1 0 1 0 0 0 0 1 1) 1 nil)
